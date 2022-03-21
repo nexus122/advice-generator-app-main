@@ -1,0 +1,138 @@
+/* Importamos la tipografia --> https://fonts.google.com/specimen/Manrope */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* Colores */
+:root{
+    /* Primarios */
+    --color--primary--1: hsl(193, 38%, 86%);
+    --color--primary--2: hsl(150, 100%, 66%); /* Yellow Accent */
+
+    /* Neutrales */
+    --color--neutral--1: hsl(217, 19%, 38%);
+    --color--neutral--2: hsl(217, 19%, 24%);
+    --color--neutral--3: hsl(218, 23%, 16%); 
+
+    /* Tipografia */
+    --font-family: 'Manrope', sans-serif;
+}
+
+/* Generales */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--color--neutral--3);
+    padding: 1rem;
+    box-sizing: border-box;
+    font-weight: 800;
+}
+
+/* Main Flex */
+
+.general {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Advice card */
+.advices{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--color--neutral--2);
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    min-height: 300px;
+    color: var(--color--primary--1)
+}
+
+.advices #advice_id {
+    text-align: center;
+    color: var(--color--primary--2);
+    padding-top: 3em;
+    font-weight: 100px;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.advices #advice{
+    font-size: 28px;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Separador */
+.separador{
+    display: block;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 80%;
+}
+
+.btn {
+    border-radius: 50%;
+    border: 0px;
+    padding: 1.4em;
+    background-color: var(--color--primary--2);
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 2em;
+}
+
+.btn:hover{
+    box-shadow: 0px 0px 10px var(--color--primary--2);
+}
+
+/* En moviles pequeños */
+@media (max-width: 425px) {
+    .advices{
+        font-size: 0.5rem;
+    }
+
+    .advices #advice{        
+        padding: 0em;
+    }
+    
+    
+    .pc{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+}
+
+/* Tabletas */
+@media (min-width: 425px) {
+    .pc{
+        display: block;
+    }
+    .mobile{
+        display: none;
+    }    
+}
+
+/* Medida PC  */
+@media (min-width: 768px) {
+    .advices{
+        max-width: 600px;
+        padding: 1em;        
+    }
+    .btn{
+        top: 3rem;
+    }
+}
